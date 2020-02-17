@@ -1,0 +1,15 @@
+<a href="/new">Add new recipe</a>
+
+<ul>
+  <%# A variável @recipes está disponível para usarmos aqui por causa da `@` %>
+  <%# Na linha de baixo abrimos uma janelinha para o ruby e executamos o método `each_with_index` em `@recipes`%>
+  <% @recipes.each_with_index do |recipe, index| %>
+    <li>
+    <%# Abrimos outra janela e dessa vez exibimos o nome da receita %>
+      <%= recipe.name %>
+    <%# Na linha de baixo abrimos outra janela dentro do path e exibimos o index que vem de `each_with_index` %>
+      <a href="/recipe/<%= index %>">X</a>
+    </li>
+    <%# Abrimos uma janela para o ruby só para fechar o bloco do `each_with_index` %>
+  <% end %>
+</ul>
